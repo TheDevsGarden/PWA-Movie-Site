@@ -1,0 +1,143 @@
+/* font-family: 'Pacifico', cursive;
+font-family: 'Quicksand', sans-serif; */
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  background-color: #282a3e;
+}
+
+#navbarNav *,
+.navbar * {
+  color: #beff91;
+  justify-content: right;
+}
+
+#navbarNav .nav-item:hover:not(.selCategsItem) {
+  background-color: #6c757d;
+  border-radius: 5px;
+}
+
+#navbarNav .nav-item,
+#navbarNav .selCategsItem * {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.extra-margin {
+  margin-right: 30px !important;
+}
+
+#navbarNav .selCategsItem * {
+  font-size: 1.15rem;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+  color: #beff91;
+}
+
+/*make the select box have background color #282a3e and border color #beff91 */
+#selCategs {
+  background-color: #282a3e;
+  border-color: #beff91;
+  color: #beff91;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+#selCategs * {
+  color: #beff91;
+}
+
+.navbar-toggler {
+  background-color: #beff91;
+  border-color: #282a3e;
+}
+
+.navbar-brand {
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+}
+
+.bg-nav-perso {
+  background-color: #282a3e;
+}
+
+.rstat {
+  font-weight: bold;
+  font-size: small;
+  color: red;
+}
+.span-text {
+  font-weight: bold;
+}
+.btn-perso {
+  margin-top: 15px !important;
+}
+
+.ht-card-img {
+  max-height: 300px;
+}
+
+.modal-card-img {
+  border-radius: 9px;
+  border: 2px solid lightgrey;
+  display: flex;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background-color: #beff91;
+  border-color: #beff91;
+  color: #282a3e;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+#main .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+/*make all the cards in main centered on the page with display flex*/
+#main .card {
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 20px;
+  width: 17.3rem;
+  padding-top: 12px;
+}
+
+/*align card-body with the bottom of the card*/
+#main .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/*for the button on the card, give it the max width of it's inner text*/
+#main .card-body .btn {
+  width: max-content;
+}
+
+/* .card {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  width: 19.3rem;
+} */
+
+#contactPage {
+  background-color: #282a3e;
+}

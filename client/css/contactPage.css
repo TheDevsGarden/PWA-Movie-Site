@@ -1,0 +1,19 @@
+.container {
+  width: 50%; /* makes the container take up half the width of the page */
+  margin: 0 auto; /* centers the container horizontally */
+}
+
+form {
+  background-color: white; /* makes the form's background white */
+  padding: 20px; /* adds some space inside the form */
+  border-radius: 10px; /* gives the form rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* adds a subtle shadow to the form */
+}
+
+.selCategsItem {
+  display: none;
+}
+
+#contactPage *:not(.navbar-toggler) {
+  width: 100% !important;
+}

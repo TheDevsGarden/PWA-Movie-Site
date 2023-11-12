@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Contact</title>
+      <link rel="stylesheet" href="../utilitaires/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="../css/style.css" />
+      <link rel="stylesheet" href="../css/contactPage.css" />
+      <script src="../utilitaires/jquery-3.6.4.min.js"></script>
+      <script src="../utilitaires/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+      <script src="../js/global.js"></script>
+    </head>
+  </head>
+  <body id="contactPage">
+    <!-- Barre de navigation -->
+    <div id="mainNav" class="container">
+      <nav class="navbar navbar-expand-lg bg-nav-perso">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html" href="javascript:afficherLivres('T');">
+            <i class="bi bi-film"></i>
+            CinePulse
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html" href="javascript:afficherLivres('T');">Liste des livres</a>
+                <!-- javascript:afficherLivres('T'); -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEnreg" href="#">Devenir membre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalConnexion" href="#">Connexion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/contact.html">Contactez-nous</a>
+              </li>
+              <li class="nav-item selCategsItem">
+                <select id="selCategs" onChange="afficherChoix(this)" class="form-select" aria-label="Default select example">
+                  <option selected disabled>Choisir une catégorie</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Fin de la barre de navigation -->
+    <!-- Début du main -->
+    <section>
+      <div class="container">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Votre Courriel</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit..</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Message</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+            <label class="form-check-label" for="exampleCheck1">S'abonner à notre bulletin d'informations</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+      </div>
+    </section>
+    <!-- Fin du main -->
+
+    <!-- Modal enregistre membre -->
+    <div class="modal fade" id="modalEnreg" tabindex="-1" aria-labelledby="modalEnregistre" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalEnregistre">Enregistrement d'un membre</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row" onSubmit="return valider(this);">
+              <div class="col-md-6">
+                <label for="prenom" class="form-label">Prénom</label>
+                <input type="text" class="form-control is-valid" id="prenom" name="prenom" required />
+              </div>
+              <div class="col-md-6">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control is-valid" id="nom" name="nom" required />
+              </div>
+              <div class="col-md-12">
+                <label for="courriel" class="form-label">Courriel</label>
+                <input type="email" class="form-control is-valid" id="courriel" name="courriel" required />
+              </div>
+              <div class="col-md-6">
+                <label for="mpass" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control is-valid" id="mpass" name="mpass" required />
+              </div>
+              <div class="col-md-6">
+                <label for="cpass" class="form-label">Confirmer le mot de passe</label>
+                <input type="password" class="form-control is-valid" id="cpass" name="cpass" required />
+              </div>
+              <span class="rstat">Pour des raison statistiques</span>
+              <div class="col-md-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sexe" id="fm" />
+                  <label class="form-check-label" for="fm"> Féminin </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sexe" id="hm" />
+                  <label class="form-check-label" for="hm"> Homme </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sexe" id="au" />
+                  <label class="form-check-label" for="au"> Autre </label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="dnaiss" class="form-label">Date de naissance</label>
+                <input type="date" class="form-control is-valid" id="dnaiss" name="dnaiss" />
+              </div>
+              <br />
+              <div class="col-12">
+                <button class="btn btn-primary btn-perso" type="submit">Enregistrer</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin du modal enregistre membre -->
+
+    <!-- Modal connexion -->
+    <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="modalConnexion" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalConnexion">Connexion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row">
+              <div class="col-md-6">
+                <label for="courrielc" class="form-label">Courriel</label>
+                <input type="email" class="form-control is-valid" id="courrielc" name="courrielc" required />
+              </div>
+              <div class="col-md-6">
+                <label for="mpassc" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control is-valid" id="mpassc" name="mpassc" required />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success btn-perso" type="submit">Connexion</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
